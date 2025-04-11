@@ -77,7 +77,7 @@ export const About = ({ image, onImageChange1, onImageChange2, currentData, onFi
             <h3 className="titleFont center white">myna vu</h3>
                 <div className="profile">
                 </div>
-                <img className="profileImage" src='/portfoliov2/image1.png'></img>
+                <img className="profileImage" src={image}></img>
                 <p className='center white'>rank: first year CS student</p>
                 <p className='center white'>spawn: Vietnam</p>
                 <div className="questBar">
