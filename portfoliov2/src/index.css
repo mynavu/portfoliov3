@@ -570,11 +570,13 @@ i {
 
   .quests {
     width: 350px;
-    padding: 0;
+    padding: 20px;
+    margin: 0;
   }
 
   .bio {
-    padding-bottom: 30px;
+    width: 350px;
+    padding: 20px;
   }
 
   .fourSkills div {
@@ -582,17 +584,16 @@ i {
   }
 
   .stats {
-    padding-bottom: 40px;
-    
+    width: 350px;
+    padding: 20px;
   }
 
   .skillsContainer, .achievementsContainer {
-    width: 350px;
+    max-width: 325px;
+    margin: 0px auto 10px auto;
+    display: block;
   }
 
-  .achievementsContainer {
-    padding-top: 20px;
-  }
 
   .achievementsContainer * {
     margin: 10px 0;
