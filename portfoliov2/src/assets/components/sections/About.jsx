@@ -42,22 +42,22 @@ export const About = ({ image, onImageChange1, onImageChange2, currentData, onFi
             <p className='thin long'>
                     ◆ software dev and student studying <span className='white'>cs</span> and <span className='white'>stat</span>
                     <br></br>
-                    ◇ actively engagged in software engineering and data science
+                    ◇ actively engagged in <span className='white'>software engineering</span> and <span className='white'>data science</span>
                     <br></br>
-                    ◆ currently taking courses in cs, maths, stat, and econ
+                    ◆ currently taking courses in <span className='white'>cs, maths, stat, and econ</span>
                     </p>
             </SpotlightCard>
             <SpotlightCard className="custom-spotlight-card quests">
             <h3 className="titleFont center white">quests&nbsp; 
                         <i className="bi bi-backpack4-fill"></i>
                     </h3>
-                    <h4 className="titleFont">current</h4>
+                    <h4 className="titleFont white">current</h4>
                     <div className="questBar">
                         <p className="label">getting an internship</p>
                         <div className="progressBar">
                         </div>
                     </div>
-                    <h4 className="titleFont">in progress</h4>
+                    <h4 className="titleFont white">in progress</h4>
                     <div className="questBar">
                         <p className="label">BSc in cs</p>
                         <div className="progressBar">
@@ -98,7 +98,7 @@ export const About = ({ image, onImageChange1, onImageChange2, currentData, onFi
                             <div className={`pinkBar ${onFinishLoading ? 'hundredPercent' : ''}`}></div>
                         </div>
                 </div>
-                <h4 className="titleFont">contact</h4>
+                <h4 className="titleFont white">contact</h4>
                 <div className="contacts">
                     <a href="https://www.linkedin.com/in/myna-vu-237091322/" target="_blank"><i className="bi bi-linkedin"></i></a>
                     <a href="https://github.com/mynavu" target="_blank"><i className="bi bi-github"></i></a>

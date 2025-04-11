@@ -20,9 +20,9 @@ export const AboutMobile = ({ image, onImageChange1, onImageChange2, currentData
         <p className='thin long'>
                     ◆ software dev and student studying <span className='white'>cs</span> and <span className='white'>stat</span>
                     <br></br>
-                    ◇ actively engagged in software engineering and data science
+                    ◇ actively engagged in <span className='white'>software engineering</span> and <span className='white'>data science</span>
                     <br></br>
-                    ◆ currently taking courses in cs, maths, stat, and econ
+                    ◆ currently taking courses in <span className='white'>cs, maths, stat, and econ</span>
                     </p>
         </SpotlightCard>
         <SpotlightCard className="custom-spotlight-card stats">
