@@ -1,0 +1,631 @@
+:root {
+  --green: #a2ff9d;
+  --light-green: #75ff8f;
+  --yellow: #fdff69;
+  --light-yellow: #feff99;
+  --blue: #a5eeff;
+  --off-blue: #3b7393;
+  --light-blue: #b6fbff;
+  --pink: #ffbef7;
+  --light-pink: #ffdaf8;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "DM Mono", monospace;
+  font-weight: 500;
+  color: rgb(202, 202, 202);
+  background: rgb(24, 24, 24);
+}
+
+body * {
+  z-index: 2;
+}
+
+.white {
+  color: white;
+}
+
+.loader {
+  width: 100px;
+  display: grid;
+  background: radial-gradient(farthest-side, white 98%, #0000) center/30px 100% no-repeat;
+  --mask: 
+    radial-gradient(12px at left 15px top 50%, #92929200 95%, #000),
+    radial-gradient(12px at center, #0000 95%, #000),
+    radial-gradient(12px at right 15px top 50%, #0000 95%, #000);
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
+  animation: l2 1s infinite alternate;
+  position: fixed; /* or absolute, depending on context */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers it */
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  grid-area: 1/1;
+  height: 30px;
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 50%;
+}
+
+.loader:after {
+  margin-left: auto;
+}
+
+@keyframes l2 {
+  to {
+    width: 50px;
+  }
+}
+
+.unhidden {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1; /* Ends fully opaque */
+  }
+}
+
+.hidden * {
+  display: none;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  background: #021639;
+  border-bottom: var(--blue) solid 2px;
+  box-shadow:0 0 15px var(--light-blue);
+  justify-content: space-around;
+  padding: 5px;
+  font-weight: 600;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-shadow: 
+  -1px -1px 0 white,  
+   1px -1px 0 white,  
+  -1px  1px 0 white,  
+   1px  1px 0 white; /* Outline color (white) */
+}
+
+.aboutContainer {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.skillsContainer, .achievementsContainer, .projectsContainer, .footer {
+  width: 750px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
+
+.skillsContainer, .achievementsContainer {
+  border-radius: 20px;
+  margin: 0px;
+  padding-bottom: 20px;
+}
+
+.skillsContainer * {
+  text-align: center;
+}
+
+.skillsContainer {
+  margin-bottom: 10px;
+}
+
+.footer {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.footer * {
+  margin: 3px 0;
+}
+
+.credits {
+  margin-top: 20px;
+}
+
+.bioAndQuests {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin-top: 10px;
+}
+
+.quests, .stats {
+  border: #323232 solid 2px;
+  border-radius: 20px;
+  margin: 10px 0;
+  padding: 0 20px;
+  background: #1a1a1a;
+}
+
+.quests {
+  padding-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.quests h4, .quests p {
+  margin: 10px 0px;
+}
+
+.stats {
+  width: 300px;
+}
+
+.thin {
+  font-weight: 400;
+}
+
+.long {
+  line-height: 30px;
+}
+
+.title {
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+.card-spotlight {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid #222;
+  background-color: #111;
+  padding: 2rem;
+  overflow: hidden;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(255, 255, 255, 0.05);
+}
+
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card-spotlight:hover::before,
+.card-spotlight:focus-within::before {
+  opacity: 0.6;
+}
+
+
+@keyframes lines {
+  0% {background-position: 0px 0px}
+  50% {background-position: 0px 0px}
+  51% {background-position: 0px 2px}
+  100% {background-position: 0px 2px}
+}
+
+.questBar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.progressBar {
+  grid-column: 2;
+  width: 200px;
+  height: 10px;
+  border: solid white 4px;
+  border-radius: 13px;
+  padding: 3px;
+}
+
+.label {
+  grid-column: 1;
+  text-align: center;
+  width: 100%;
+}
+
+.greenBar {
+  height: 100%;
+  background: var(--green);
+  border-radius: 10px;
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+.yellowBar {
+  height: 100%;
+  background: var(--yellow);
+  border-radius: 10px;
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+.blueBar {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 10px;
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+.pinkBar {
+  height: 100%;
+  background: var(--pink);
+  border-radius: 10px;
+  width: 0;
+  transition: width 1s ease-in-out;
+}
+
+.tenPercent {
+  width: 10%;
+}
+
+.thirtyPercent {
+  width: 30%;
+
+}
+
+.twentyPercent {
+  width: 20%;
+}
+
+.hundredPercent {
+  width: 100%;
+
+}
+
+.nintyPercent {
+  width: 90%;
+}
+
+.profileImage {
+  width: 200px;
+  height: 200px; /* Ensure height matches width for a perfect circle */
+  display: block;
+  margin: auto;
+  border-radius: 50%; /* Creates the circular shape */
+  object-fit: cover; /* Ensures the image fills the circle without distortion */
+}
+
+.fourSkills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.langContainer {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.langContainer *, .techContainer *, .creativeContainer *, .devToolsContainer * {
+  margin: 10px 0;
+}
+
+.techContainer {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.creativeContainer {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.devToolsContainer {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.lang, .tech, .creative, .devTools {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.blue {
+  color: #7bc8ff;
+}
+
+.orange {
+  color: #ffb07b;
+}
+
+.yellow {
+  color: #f5ff6c;
+}
+
+.cyan {
+  color: #7bf8ff;
+}
+
+.red {
+  color: #ff7f7b;
+}
+
+.purple {
+  color: #b67bff;
+}
+
+.pink {
+  color: var(--light-pink);
+}
+
+.green {
+  color: #7bffa7;
+}
+
+.lightGreen {
+  color: #afffa1;
+}
+
+.achievements {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.achievement {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-size: 24px; /* Within 20-48 range */
+  font-weight: 400; /* Within 100-700 range */
+  }
+
+.achievementName {
+  border-radius: 50px;
+  padding: 5px 5px 5px 0px;
+}
+
+.yellowBorder {
+  border: solid #d5b500 5px;
+
+}
+
+.greenBorder {
+  border: solid #37b860 5px;
+}
+
+.pinkBorder {
+  border: solid #ff68c5 5px;
+}
+
+.purpleBorder {
+  border: solid #795bff 5px;
+}
+
+i {
+  border-radius: 50%;
+  padding: 6px 10px 6px 10px;
+}
+
+.bi-trophy-fill {
+  border-radius: 50%;
+  padding: 6px 10px 6px 10px;
+  background: #d5b500;
+
+}
+
+.bi-mortarboard-fill {
+  border-radius: 50%;
+  padding: 6px 10px 6px 10px;
+  background: #37b860;
+}
+
+.bi-cake-fill {
+  border-radius: 50%;
+  padding: 6px 10px 6px 10px;
+  background: #ff68c5;
+}
+
+.bi-palette-fill {
+  border-radius: 50%;
+  padding: 6px 10px 6px 10px;
+  background: #795bff;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.bi-linkedin, .bi-github, .bi-envelope-fill, .bi-globe {
+  font-size: 30px;
+}
+
+.magnetLines-container {
+
+
+  justify-items: center;
+  align-items: center;
+}
+
+.magnetLines-container span {
+  display: block;
+  transform-origin: center;
+  will-change: transform;
+  transform: rotate(var(--rotate));
+}
+
+
+.card {
+  border: solid 1px rgb(59, 59, 59);
+  background: #111;
+  border-radius: 10px;
+  height: 300px;
+  padding: 0 5px 0 5px;
+}
+
+.card * {
+  margin: 5px 0px 5px 0px;
+}
+
+.card img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.slick-slide > div {
+  margin: 0px 20px;
+  width: auto;
+}
+
+.small {
+  font-size: 13px;
+}
+
+
+.center {
+  text-align: center;
+}
+
+.projectLinks {
+  display: flex;
+  justify-content: center;
+}
+
+.projectLinks * {
+  font-size: 20px;
+}
+
+@media (max-width: 800px) {
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .aboutContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    margin-top: 40px;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .quests {
+    width: 350px;
+    padding: 0;
+  }
+
+  .bio {
+    padding-bottom: 30px;
+  }
+
+  .fourSkills div {
+    margin-bottom: 10px;
+  }
+
+  .stats {
+    padding-bottom: 40px;
+    
+  }
+
+  .skillsContainer, .achievementsContainer {
+    width: 350px;
+  }
+
+  .achievementsContainer {
+    padding-top: 20px;
+  }
+
+  .achievementsContainer * {
+    margin: 10px 0;
+  }
+
+  .achievement {
+    margin: 3px 0;
+  }
+
+  .fourSkills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slick-slide > div {
+    margin: 0px 30px;
+    width: auto;
+  }
+
+  .card {
+    height: 310px;
+  }
+
+
+  .footer {
+    width: 350px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+  }
+
+}
+
