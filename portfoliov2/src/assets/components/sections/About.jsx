@@ -65,9 +65,9 @@ export const About = ({ image, onImageChange1, onImageChange2, currentData, onFi
                         </div>
                     </div>
                     <div className="questBar">
-                        <p className="label">learn react</p>
+                        <p className="label">undergrad research project</p>
                         <div className="progressBar">
-                            <div className={`greenBar ${onFinishLoading ? 'thirtyPercent' : ''}`}></div>
+                            <div className={`greenBar ${onFinishLoading ? 'tenPercent' : ''}`}></div>
                         </div>
                     </div>
             </SpotlightCard>
@@ -125,10 +125,11 @@ export const About = ({ image, onImageChange1, onImageChange2, currentData, onFi
                 <div className="techContainer">
                     <h4 className="titleFont">technologies</h4>
                     <div className="tech">
+                        <p className="cyan">React</p>
                         <p className="lightGreen">Node.js</p>
                         <p className="blue">PostgreSQL</p>
                         <p className="green">Supabase</p>
-                        <p className="cyan">React</p>
+                        <p className="skyblue">TailwindCSS</p>
                     </div>
                 </div>
                 <div className="creativeContainer">
@@ -175,7 +176,7 @@ export const About = ({ image, onImageChange1, onImageChange2, currentData, onFi
                         <i className="bi bi-cake-fill"></i>
                         &nbsp;Vanilla Dev
                     </h4>
-                    <p className='small'>rigourously covered vanilla HTML, CSS and JS</p>
+                    <p className='small'>mastered vanilla HTML, CSS and JS</p>
                 </div>
                 <div className="achievement">
                     <h4 className="achievementName purpleBorder white">

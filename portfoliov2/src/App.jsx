@@ -11,6 +11,13 @@ const image1 = 'https://mynavu.github.io/portfoliov2/image1.png'
 
 const projectsData = [
   {
+    name: "RedTakes",
+    imageUrl: "/Users/vuhaiau/portfoliov3/portfoliov2/public/redtakes_thumbnail.png", 
+    caption: "Analyzes the sentiment of Reddit users using the Reddit and Hugging Face API. Built with react.",
+    webUrl: "https://redtakes.netlify.app/",
+    github: "https://github.com/mynavu/RedTakes"
+  },
+  {
     name: "Globit",
     imageUrl: "https://mynavu.github.io/portfoliov2/globit_thumbnail.png", 
     caption: "Full stack app for users to geotag images onto a personal globe. Built with vanilla JS and Supabase.",
@@ -20,21 +27,21 @@ const projectsData = [
   {
     name: "Vocabular",
     imageUrl: "https://mynavu.github.io/portfoliov2/vocabular_thumbnail.png", 
-    caption: "A wordle clone for English learners through a gamified approach to learn new vocabularies.",
+    caption: "Wordle clone for English learners to learn new vocabularies. Built with vanilla JS and D3.",
     webUrl: "https://mynavu.github.io/Vocabular/",
     github: "https://github.com/mynavu/Vocabular"
   },
   {
     name: "Word Cloud for Messages",
     imageUrl: "https://mynavu.github.io/portfoliov2/wordcloud_thumbnail.png", 
-    caption: "Visualizing user's word frequencies and overall quantity in Facebook/Instagram chats.",
+    caption: "Visualizing user's word frequencies in Facebook/Instagram chats. Built with vanilla JS.",
     webUrl: "https://mynavu.github.io/Word-Cloud-for-Messages/",
     github: "https://github.com/mynavu/Word-Cloud-for-Messages"
   },
   {
     name: "Art Portfolio",
     imageUrl: "https://mynavu.github.io/portfoliov2/portfolio_thumbnail.png", 
-    caption: "Includes all my best work across various mediums.",
+    caption: "Includes all my best work across various mediums. Built with vanilla JS.",
     webUrl: "https://mynavu.github.io/art-portfolio/index.html",
     github: "https://github.com/mynavu/art-portfolio"
   }
